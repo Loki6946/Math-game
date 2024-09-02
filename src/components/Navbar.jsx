@@ -106,13 +106,6 @@ function Navbar({ navbar, theme, options }) {
           </label>
         </div>
       </div>
-      {/* <div className="flex flex-col justify-center">
-        <label className="flex items-center gap-2 p-2 hover:bg-accent-3-dm hover:dark:bg-dark-accent-3-dm has-[:checked]:bg-accent-1-tr dark:has-[:checked]:bg-accent-1-tr border border-accent-3-dm dark:border-dark-accent-3-dm has-[:checked]:border-accent-1 dark:has-[:checked]:border-accent-1 rounded-lg cursor-pointer">
-          <FaDice />
-          <span>Random mode</span>
-          <input className="hidden" type="checkbox" name="random" onChange={(e) => setRandomMode(e)}/>
-        </label>
-      </div> */}
     </nav>
   );
 }
