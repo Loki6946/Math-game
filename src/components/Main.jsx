@@ -90,7 +90,7 @@ function Main({ navbar, theme, options }) {
   }, [options.difficulty, options.gamemode]);
 
   return (
-    <main className="min-h-screen flex justify-center items-center mx- bg-background dark:bg-dark-background font-primary font-bold text-foreground dark:text-dark-foreground">
+    <main className="min-h-dvh flex justify-center items-center mx- bg-background dark:bg-dark-background font-primary font-bold text-foreground dark:text-dark-foreground">
       <button
         className={`${
           navbar.isVisible ? "hidden" : "block"
@@ -124,6 +124,7 @@ function Main({ navbar, theme, options }) {
             type="text"
             inputMode="numeric"
             value={inputValue}
+            autoComplete="off"
             onChange={(e) => checkAnswer(e.target.value)}
           />
         </div>

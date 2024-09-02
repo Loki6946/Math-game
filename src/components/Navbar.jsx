@@ -14,7 +14,7 @@ function Navbar({ navbar, theme, options }) {
     <nav
       className={`${
         navbar.isVisible ? "block" : "hidden"
-      } absolute min-h-full px-6 py-12 bg-background dark:bg-dark-background font-primary text-foreground dark:text-dark-foreground shadow-lg animate-in slide-in-from-left`}
+      } absolute min-h-full px-6 py-12 bg-background dark:bg-dark-background font-primary text-foreground dark:text-dark-foreground shadow-xl animate-in slide-in-from-left`}
     >
       <div className="flex justify-between items-center gap-5 mb-8">
         <button
@@ -23,7 +23,7 @@ function Navbar({ navbar, theme, options }) {
         >
           <FaTimes size={20} />
         </button>
-        <h1 className="font-bold text-4xl">Math game</h1>
+        <h1 className="font-bold text-4xl">Math tail</h1>
       </div>
       <div className="flex flex-col justify-center gap-1 mb-8">
         <p className="font-bold text-foreground-dm">Select difficulty</p>
