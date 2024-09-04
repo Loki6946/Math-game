@@ -1,7 +1,7 @@
 import "../index.css";
 import { FaPlus, FaDivide, FaMinus, FaTimes } from "react-icons/fa";
 
-function Navbar({ navbar, theme, options }) {
+function Navbar({ navbar, options }) {
   const setDifficulty = (element) => {
     options.setDifficulty(element.target.value);
   };
