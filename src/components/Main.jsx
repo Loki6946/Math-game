@@ -107,14 +107,14 @@ function Main({ navbar, theme, options }) {
         {!theme.dark && <IoMoon size={20} />}
       </button>
       <div className="flex flex-col justify-center items-center gap-20 mx-2">
-        <p className="flex flex-col items-center gap-2 font-bold text-3xl text-foreground-dm">
+        <p className="flex flex-col items-center gap-2 font-bold text-3xl md:text-4xl text-foreground-dm">
           Score <span className="text-foreground dark:text-dark-foreground">{score}</span>
         </p>
         <div className="flex justify-center items-center gap-4 md:gap-8">
           <p className="text-4xl md:text-7xl">
             {num1} {operator} {num2}
           </p>
-          <p className="text-5xl md:text-4xl">=</p>
+          <p className="text-5xl md:text-7xl">=</p>
           <input
             className={`max-w-24 md:max-w-40 p-2 text-4xl md:text-7xl outline-none bg-foreground-lt dark:bg-dark-background border-2 border-accent-3 dark:border-dark-accent-3-dm  ${
               isWrong
