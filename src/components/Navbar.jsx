@@ -23,7 +23,7 @@ function Navbar({ navbar, options }) {
         >
           <FaTimes size={20} />
         </button>
-        <h1 className="font-bold text-3xl md:4xl">Math tail</h1>
+        <h1 className="font-bold text-3xl md:text-4xl">Math tail</h1>
       </div>
       <div className="flex flex-col justify-center gap-1 mb-8">
         <p className="font-bold text-foreground-dm">Select difficulty</p>
