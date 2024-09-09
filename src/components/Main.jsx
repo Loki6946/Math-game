@@ -37,9 +37,19 @@ function Main({ navbar, theme, options }) {
         numMax = 26;
         break;
     }
-
-    newNum1 = Math.floor(Math.random() * (numMax - numMin) + numMin);
-    newNum2 = Math.floor(Math.random() * (numMax - numMin) + numMin);
+    
+    if (options.gamemode == "division") {
+      newNum2 = Math.floor(Math.random() * (numMax / 2 - numMin) + numMin);
+      let multiplier = Math.floor(Math.random() * 5) + 1;
+      newNum1 = newNum2 * multiplier;
+      if (newNum1 > numMax) {
+        newNum1 = numMax - (numMax % newNum2);
+    }
+    } else {
+      newNum1 = Math.floor(Math.random() * (numMax - numMin) + numMin);
+      newNum2 = Math.floor(Math.random() * (numMax - numMin) + numMin);
+    }
+    
 
     switch (options.gamemode) {
       case "addition":

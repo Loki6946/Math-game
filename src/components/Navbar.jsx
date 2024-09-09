@@ -92,13 +92,12 @@ function Navbar({ navbar, options }) {
             <FaMinus />
             <span>Substraction</span>
           </label>
-          <label className="flex items-center gap-2 p-2 hover:bg-accent-3-dm hover:dark:bg-dark-accent-3-dm has-[:checked]:bg-accent-1 dark:has-[:checked]:bg-accent-1  has-[:checked]:text-foreground-lt text-foreground-dm rounded-lg cursor-pointer">
+          <label className="flex items-center gap-2 p-2 hover:bg-accent-3-dm hover:dark:bg-dark-accent-3-dm has-[:checked]:bg-accent-1 dark:has-[:checked]:bg-accent-1  has-[:checked]:text-foreground-lt rounded-lg cursor-pointer">
             <input
               className="hidden"
               type="radio"
               name="gamemode"
               value="division"
-              disabled
               onChange={(e) => setGamemode(e)}
             />
             <FaDivide />
