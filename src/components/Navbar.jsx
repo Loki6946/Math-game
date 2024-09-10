@@ -86,11 +86,11 @@ function Navbar({ navbar, options }) {
               className="hidden"
               type="radio"
               name="gamemode"
-              value="substraction"
+              value="subtraction"
               onChange={(e) => setGamemode(e)}
             />
             <FaMinus />
-            <span>Substraction</span>
+            <span>Subtraction</span>
           </label>
           <label className="flex items-center gap-2 p-2 hover:bg-accent-3-dm hover:dark:bg-dark-accent-3-dm has-[:checked]:bg-accent-1 dark:has-[:checked]:bg-accent-1  has-[:checked]:text-foreground-lt rounded-lg cursor-pointer">
             <input

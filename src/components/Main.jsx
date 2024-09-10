@@ -3,6 +3,29 @@ import { FaBars } from "react-icons/fa6";
 import { IoSunny, IoMoon } from "react-icons/io5";
 import "../index.css";
 
+const arithmeticDifficulties = {
+  addition: {
+    easy: { min: 0, max: 10, description: "Single-digit addition" },
+    medium: { min: 10, max: 50, description: "Two-digit addition" },
+    hard: { min: 50, max: 100, description: "Three-digit addition" }
+  },
+  subtraction: {
+    easy: { min: 0, max: 10, description: "Single-digit subtraction" },
+    medium: { min: 10, max: 50, description: "Two-digit subtraction" },
+    hard: { min: 50, max: 100, description: "Three-digit subtraction" }
+  },
+  multiplication: {
+    easy: { min: 1, max: 10, description: "Single-digit multiplication" },
+    medium: { min: 10, max: 20, description: "Multiply by teens" },
+    hard: { min: 20, max: 50, description: "Two-digit multiplication" }
+  },
+  division: {
+    easy: { min: 1, max: 50, divisorMax: 10, description: "Single-digit divisors, dividends up to 20" },
+    medium: { min: 10, max: 100, divisorMax: 20, description: "Divisors up to 20, dividends up to 100" },
+    hard: { min: 50, max: 200, divisorMax: 50, description: "Larger numbers, possible remainders" }
+  }
+};
+
 function Main({ navbar, theme, options }) {
   const [num1, setNum1] = useState(0);
   const [num2, setNum2] = useState(0);
@@ -18,36 +41,20 @@ function Main({ navbar, theme, options }) {
   };
 
   const generateProblem = () => {
-    let numMin = 0;
-    let numMax = 0;
-    let newNum1 = 0;
-    let newNum2 = 0;
-
-    switch (options.difficulty) {
-      case "easy":
-        numMin = 1;
-        numMax = 10;
-        break;
-      case "medium":
-        numMin = 3;
-        numMax = 16;
-        break;
-      case "hard":
-        numMin = 6;
-        numMax = 26;
-        break;
-    }
+    const range = arithmeticDifficulties[options.gamemode][options.difficulty];
+    let newNum1, newNum2;
     
     if (options.gamemode == "division") {
-      newNum2 = Math.floor(Math.random() * (numMax / 2 - numMin) + numMin);
-      let multiplier = Math.floor(Math.random() * 5) + 1;
-      newNum1 = newNum2 * multiplier;
-      if (newNum1 > numMax) {
-        newNum1 = numMax - (numMax % newNum2);
-    }
+      newNum2 = Math.floor(Math.random() * (range.divisorMax - 1)) + 1;
+      const maxQuotient = Math.floor(range.max / newNum2)
+      const quotient = Math.floor(Math.random() * (maxQuotient - 1)) + 2;
+      newNum1 = newNum2 * quotient;
+      if (newNum1 < range.min) {
+        newNum1 = range.min + newNum2 - (range.min % newNum2);
+      }
     } else {
-      newNum1 = Math.floor(Math.random() * (numMax - numMin) + numMin);
-      newNum2 = Math.floor(Math.random() * (numMax - numMin) + numMin);
+      newNum1 = Math.floor(Math.random() * (range.max - range.min) + range.min);
+      newNum2 = Math.floor(Math.random() * (range.max - range.min) + range.min);
     }
     
 
@@ -60,7 +67,7 @@ function Main({ navbar, theme, options }) {
         setOperator("x");
         setAnswer(newNum1 * newNum2);
         break;
-      case "substraction":
+      case "subtraction":
         setOperator("-");
         if (newNum2 > newNum1) {
           let biggerNumber = newNum2;
