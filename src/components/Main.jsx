@@ -7,23 +7,23 @@ const arithmeticDifficulties = {
   addition: {
     easy: { min: 0, max: 10, description: "Single-digit addition" },
     medium: { min: 10, max: 50, description: "Two-digit addition" },
-    hard: { min: 50, max: 100, description: "Three-digit addition" }
+    hard: { min: 50, max: 100, description: "Three-digit addition" },
   },
   subtraction: {
     easy: { min: 0, max: 10, description: "Single-digit subtraction" },
     medium: { min: 10, max: 50, description: "Two-digit subtraction" },
-    hard: { min: 50, max: 100, description: "Three-digit subtraction" }
+    hard: { min: 50, max: 100, description: "Three-digit subtraction" },
   },
   multiplication: {
     easy: { min: 1, max: 10, description: "Single-digit multiplication" },
     medium: { min: 10, max: 20, description: "Multiply by teens" },
-    hard: { min: 20, max: 50, description: "Two-digit multiplication" }
+    hard: { min: 20, max: 50, description: "Two-digit multiplication" },
   },
   division: {
     easy: { min: 1, max: 50, divisorMax: 10, description: "Single-digit divisors, dividends up to 20" },
     medium: { min: 10, max: 100, divisorMax: 20, description: "Divisors up to 20, dividends up to 100" },
-    hard: { min: 50, max: 200, divisorMax: 50, description: "Larger numbers, possible remainders" }
-  }
+    hard: { min: 50, max: 200, divisorMax: 50, description: "Larger numbers, possible remainders" },
+  },
 };
 
 function Main({ navbar, theme, options }) {
@@ -43,10 +43,10 @@ function Main({ navbar, theme, options }) {
   const generateProblem = () => {
     const range = arithmeticDifficulties[options.gamemode][options.difficulty];
     let newNum1, newNum2;
-    
+
     if (options.gamemode == "division") {
       newNum2 = Math.floor(Math.random() * (range.divisorMax - 1)) + 1;
-      const maxQuotient = Math.floor(range.max / newNum2)
+      const maxQuotient = Math.floor(range.max / newNum2);
       const quotient = Math.floor(Math.random() * (maxQuotient - 1)) + 2;
       newNum1 = newNum2 * quotient;
       if (newNum1 < range.min) {
@@ -56,7 +56,6 @@ function Main({ navbar, theme, options }) {
       newNum1 = Math.floor(Math.random() * (range.max - range.min) + range.min);
       newNum2 = Math.floor(Math.random() * (range.max - range.min) + range.min);
     }
-    
 
     switch (options.gamemode) {
       case "addition":

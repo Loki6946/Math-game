@@ -16,13 +16,10 @@ function App() {
 
   return (
     <div>
-      <Navbar
-        navbar={{ isVisible, setIsVisible, toggleNavbar }}
-        options={{ setDifficulty, setGamemode }}
-      />
+      <Navbar navbar={{ isVisible, setIsVisible, toggleNavbar }} options={{ setDifficulty, setGamemode }} />
       <Main
         navbar={{ isVisible, setIsVisible, toggleNavbar }}
-        theme={{dark, setDark}}
+        theme={{ dark, setDark }}
         options={{ difficulty, gamemode }}
       />
     </div>
