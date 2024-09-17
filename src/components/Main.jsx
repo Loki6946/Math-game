@@ -140,7 +140,7 @@ function Main({ navbar, theme, options }) {
             type="text"
             inputMode="numeric"
             value={inputValue}
-            autoComplete="off"
+            autoComplete="false"
             onChange={(e) => checkAnswer(e.target.value)}
           />
         </div>
